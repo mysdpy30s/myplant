@@ -1,0 +1,510 @@
+@import url(/assets/css/reset.css);
+
+body,
+input,
+button {
+  font-family: "Gowun Batang", serif;
+  font-size: 15px;
+}
+
+.header {
+  background-image: url(/assets/images/bg_top.png);
+  width: 800px;
+  height: 253px;
+  object-fit: fill;
+  border-radius: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  padding: 15px;
+  margin: 0 0 0 -10px;
+  position: relative;
+  z-index: 0;
+}
+
+.header__title span {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #343434;
+  letter-spacing: -1.5px;
+  rotate: -2.5deg;
+}
+
+.header__title-deco {
+  position: absolute;
+  float: left;
+  top: -25px;
+  left: -70px;
+  z-index: -1;
+}
+
+.header__myinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #fff;
+  margin-right: 5%;
+  position: relative;
+}
+
+.header__myinfo a {
+  text-decoration: underline;
+  font-size: 1.3em;
+  color: #000000;
+  z-index: 1;
+}
+
+.header__myinfo a:hover {
+  color: #6f9605;
+  transition: color 0.1s;
+}
+
+.header__myinfo:hover .header__myinfo-sub {
+  height: 50px;
+  opacity: 1;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.header__myinfo-sub {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  transition: ease-out 0.1s;
+  z-index: -1;
+  margin-left: 15px;
+  background-color: #fff;
+}
+
+.header__myinfo-sub ul li {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.header__myinfo-sub ul li a {
+  text-decoration: none;
+  font-size: 0.9em;
+  letter-spacing: -0.5px;
+}
+
+.header__myinfo-sub ul li img {
+  width: 16px;
+  height: 16px;
+
+  margin-right: 5px;
+}
+
+.header__myinfo-deco {
+  position: absolute;
+  float: right;
+  top: -60px;
+  right: -200px;
+  z-index: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.list__util {
+  width: 800px;
+  height: 477px;
+  border-radius: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* 검색창 스타일링 */
+.list__util-search .form {
+  --input-text-color: #505050;
+  --input-bg-color: #fff;
+  --focus-input-bg-color: #fff;
+  --text-color: #949faa;
+  --active-color: #89b806;
+  --width-of-input: 250px;
+  --inline-padding-of-input: 0.7em;
+  --gap: 0.9em;
+}
+/* form style */
+.list__util-search .form {
+  font-size: 1.1em;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #c8c8c8;
+  align-items: center;
+  width: var(--width-of-input);
+  position: relative;
+  isolation: isolate;
+}
+/* a fancy bg for showing background and border when focus. */
+.list__util-search .fancy-bg {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  background: var(--input-bg-color);
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+/* label styling */
+.list__util-search label {
+  width: 100%;
+  padding: 0.2em;
+  height: 30px;
+  padding-inline: var(--inline-padding-of-input);
+  display: flex;
+  align-items: center;
+}
+
+.list__util-search .search,
+.list__util-search .close-btn {
+  position: absolute;
+}
+/* styling search-icon */
+.list__util-search .search {
+  fill: var(--text-color);
+  left: var(--inline-padding-of-input);
+}
+/* svg -- size */
+.list__util-search svg {
+  width: 17px;
+  display: block;
+  cursor: pointer;
+}
+/* styling of close button */
+.list__util-search .close-btn {
+  border: none;
+  right: var(--inline-padding-of-input);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0.1em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff8585;
+  opacity: 0;
+  visibility: hidden;
+}
+/* styling of input */
+.list__util-search .input {
+  color: var(--input-text-color);
+  width: 100%;
+  margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
+  background: none;
+  border: none;
+}
+
+.list__util-search .input:focus {
+  outline: none;
+}
+
+.list__util-search .input::placeholder {
+  color: var(--text-color);
+}
+/* input background change in focus */
+.list__util-search .input:focus ~ .fancy-bg {
+  border: 1px solid var(--active-color);
+  background: var(--focus-input-bg-color);
+}
+/* search icon color change in focus */
+.list__util-search .input:focus ~ .search {
+  fill: var(--active-color);
+}
+/* showing close button when typing */
+.list__util-search .input:valid ~ .close-btn {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.2s;
+}
+
+.list__util-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+/* 품목 추가 버튼*/
+.list__util-btn-regi .button {
+  position: relative;
+  width: 122px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #c8c8c8; /* b1c51c */
+  background-color: #fff; /* 89b806 */
+  margin-right: 15px;
+}
+
+.list__util-btn-regi .button,
+.list__util-btn-regi .button__icon,
+.list__util-btn-regi .button__text {
+  transition: all 0.3s;
+}
+
+.list__util-btn-regi .button .button__text {
+  transform: translateX(12px);
+  color: #7e7e7e;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.list__util-btn-regi .button .button__icon {
+  position: absolute;
+  transform: translateX(85px);
+  height: 100%;
+  width: 30px;
+  background-color: #bfd60c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list__util-btn-regi .button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.list__util-btn-regi .button:hover {
+  background: #89b806;
+}
+
+.list__util-btn-regi .button:hover .button__text {
+  color: transparent;
+}
+
+.list__util-btn-regi .button:hover .button__icon {
+  width: 115px;
+  transform: translateX(0);
+}
+
+.list__util-btn-regi .button:active .button__icon {
+  background-color: #89b806;
+}
+
+.list__util-btn-regi .button:active {
+  border: 1px solid #89b806;
+}
+
+/* 품목 삭제 버튼 */
+.list__util-btn-del .button {
+  position: relative;
+  width: 122px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #c8c8c8;
+  background-color: #ffffff;
+  margin-right: 15px;
+}
+
+.list__util-btn-del .button,
+.list__util-btn-del .button__icon,
+.list__util-btn-del .button__text {
+  transition: all 0.3s;
+}
+
+.list__util-btn-del .button .button__text {
+  transform: translateX(12px);
+  color: #7e7e7e;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.list__util-btn-del .button .button__icon {
+  position: absolute;
+  transform: translateX(85px);
+  height: 100%;
+  width: 30px;
+  background-color: #ff8585;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list__util-btn-del .button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.list__util-btn-del .button:hover {
+  background: #ff6060;
+}
+
+.list__util-btn-del .button:hover .button__text {
+  color: transparent;
+}
+
+.list__util-btn-del .button:hover .button__icon {
+  width: 115px;
+  transform: translateX(0);
+}
+
+.list__util-btn-del .button:active .button__icon {
+  background-color: #ff6060;
+}
+
+.list__util-btn-del .button:active {
+  border: 1px solid #ff6060;
+}
+
+.list__content {
+  background-image: url("/assets/images/bg_bot.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-top: 10%;
+  width: 800px;
+  height: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.list__actual {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px dashed #c8c8c8;
+  width: 96%;
+  height: 97%;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.list__actual table {
+  width: 96%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: table;
+}
+
+.list__actual table tr:nth-child(1) {
+  height: 50px;
+}
+
+.list__actual td {
+  border-bottom: solid 1px #e2e2e2;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 체크박스(모두 선택) 속성 */
+/* Hide the default checkbox */
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1em;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  height: 1.2em;
+  width: 1.2em;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  transition: all 0.5s;
+  --spread: 15px;
+  left: 0.3em;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background: #ffffff;
+  box-shadow: -5px -5px var(--spread) 0px #c4ff89,
+    0 -5px var(--spread) 0px #dfff4e, 5px -5px var(--spread) 0px #ff966a,
+    5px 0 var(--spread) 0px #bd72ff, 5px 5px var(--spread) 0px #f77737,
+    0 5px var(--spread) 0px #fcaf45, -5px 5px var(--spread) 0px #ffdc80;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid #89b806;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: solid 1px #e2e2e2;
+  cursor: pointer;
+  height: 1.2em;
+  width: 1.2em;
+}
+input[type="checkbox"]::after {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  content: "";
+  display: none;
+  height: 50%;
+  left: 35%;
+  position: relative;
+  top: 15%;
+  transform: rotate(45deg);
+  width: 20%;
+}
+input[type="checkbox"]:checked {
+  background: #f9ca30;
+}
+input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+#item-photo img {
+  max-width: 100px;
+  height: 100px;
+  color: #fff2e3;
+  border-radius: 15px;
+  box-shadow: 3px 3px 3px #c8c8c8;
+}
