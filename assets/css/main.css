@@ -1,5 +1,9 @@
 @import url(/assets/css/reset.css);
 
+html {
+  font-size: 20px;
+}
+
 body,
 input,
 button {
@@ -9,7 +13,7 @@ button {
 
 .header {
   background-image: url(/assets/images/bg_top.png);
-  width: 60%;
+  width: 70vw;
   height: 253px;
   object-fit: cover;
   border-radius: 50px;
@@ -28,7 +32,7 @@ button {
 
 .header__title span {
   display: block;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #343434;
   letter-spacing: -1.5px;
@@ -46,7 +50,7 @@ button {
 .header__myinfo {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 1.2em;
   background-color: #fff;
   margin-right: 5%;
   position: relative;
@@ -74,9 +78,9 @@ button {
 .header__myinfo-sub {
   display: flex;
   flex-direction: column;
-  width: 110px;
+  width: 60%;
   position: absolute;
-  top: 100%;
+  top: 90%;
   left: 0;
   opacity: 0;
   transition: ease-out 0.1s;
@@ -121,7 +125,7 @@ button {
 }
 
 .list__util {
-  width: 800px;
+  width: 70vw;
   height: auto;
   border-radius: 50px;
   margin: 0 auto;
@@ -138,7 +142,7 @@ button {
   --focus-input-bg-color: #fff;
   --text-color: #949faa;
   --active-color: #89b806;
-  --width-of-input: 250px;
+  --width-of-input: 16em;
   --inline-padding-of-input: 0.7em;
   --gap: 0.9em;
 }
