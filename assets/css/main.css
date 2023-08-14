@@ -16,28 +16,40 @@ button {
 }
 
 @media screen and (max-width: 430px) {
+  body {
+    overflow: hidden;
+  }
+
   .header {
     max-width: 100vw;
-    height: auto;
+    height: 50%;
     position: relative;
+    margin: 0 auto;
   }
-  .header__title span {
-    font-size: 3em;
+  .header__title-deco img {
+    width: 100%;
   }
+  .header__myinfo {
+    position: absolute;
+    top: -6.5em;
+    right: -6em;
+  }
+  .header__myinfo span,
   .header__myinfo a {
-    font-size: 0.8em;
+    width: 60%;
   }
   .header__myinfo-deco img {
-    max-width: 70%;
+    max-width: 80%;
     position: relative;
-    top: 3rem;
+    top: 7rem;
+    right: 4.5rem;
+    z-index: -1;
   }
   .mobile-sidebar {
     display: block;
     position: fixed;
-    top: 60%;
-    left: 80%;
-    width: 100%;
+    bottom: 40vh;
+    left: 21.5rem;
     z-index: 999;
   }
   .mobile-sidebar .mobile-button {
@@ -52,9 +64,13 @@ button {
   .list__util-btn-del {
     display: none;
   }
+  .list__content {
+    max-width: 100%;
+  }
   .list__actual table {
     max-width: 100%;
     height: auto;
+    overflow-y: auto;
   }
   .list__actual td {
     font-size: 1em;
@@ -628,7 +644,7 @@ button {
 
 .list__content {
   max-width: 100%;
-  min-height: 400px;
+  min-height: 440px;
   border-radius: 50px;
 }
 
@@ -639,7 +655,7 @@ button {
   border-radius: 20px;
   margin-top: 2em;
   width: 100%;
-  max-height: 50vh;
+  height: 450px;
   position: relative;
   z-index: 0;
   overflow-y: auto;
@@ -649,7 +665,6 @@ button {
   width: 800px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
-  margin: 0 auto;
 }
 
 .list__actual td {
