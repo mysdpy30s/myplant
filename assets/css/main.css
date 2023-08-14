@@ -11,12 +11,41 @@ button {
   font-size: 15px;
 }
 
+.mobile-sidebar {
+  display: none;
+}
+
 @media screen and (max-width: 430px) {
   .header {
-    width: 100%;
+    max-width: 100vw;
+    height: auto;
+  }
+  .header__title span {
+    font-size: 1rem;
   }
   .header__title-deco {
     width: 80%;
+  }
+  .header__myinfo-deco {
+    width: 40%;
+  }
+  .list__util-search form {
+    margin-left: 0;
+  }
+  .list__util-btn-regi .button,
+  .list__util-btn-del .button {
+    width: 20%;
+  }
+  .mobile-sidebar {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 5%;
+    width: 100%;
+    z-index: 999;
+  }
+  .mobile-sidebar .mobile-button {
+    width: 100%;
   }
 }
 
@@ -255,7 +284,7 @@ button {
   flex-direction: row;
 }
 
-/* 품목 추가 버튼*/
+/* 친구 추가 버튼*/
 .list__util-btn-regi .button {
   position: relative;
   width: 122px;
@@ -265,7 +294,7 @@ button {
   align-items: center;
   border: 1px solid #c8c8c8; /* b1c51c */
   background-color: #fff; /* 89b806 */
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 .list__util-btn-regi .button,
@@ -319,7 +348,71 @@ button {
   border: 1px solid #89b806;
 }
 
-/* 품목 삭제 버튼 */
+/* 친구 수정 버튼 */
+.list__util-btn-modi .button {
+  position: relative;
+  width: 122px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #c8c8c8;
+  background-color: #ffffff;
+  margin-right: 5px;
+}
+
+.list__util-btn-modi .button,
+.list__util-btn-modi .button__icon,
+.list__util-btn-modi .button__text {
+  transition: all 0.3s;
+}
+
+.list__util-btn-modi .button .button__text {
+  transform: translateX(12px);
+  color: #7e7e7e;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.list__util-btn-modi .button .button__icon {
+  position: absolute;
+  transform: translateX(85px);
+  height: 100%;
+  width: 30px;
+  background-color: #edd77d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list__util-btn-modi .button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.list__util-btn-modi .button:hover {
+  background: #fbcb0b;
+}
+
+.list__util-btn-modi .button:hover .button__text {
+  color: transparent;
+}
+
+.list__util-btn-modi .button:hover .button__icon {
+  width: 115px;
+  transform: translateX(0);
+}
+
+.list__util-btn-modi .button:active .button__icon {
+  background-color: #fbcb0b;
+}
+
+.list__util-btn-modi .button:active {
+  border: 1px solid #fbcb0b;
+}
+
+/* 친구 삭제 버튼 */
 .list__util-btn-del .button {
   position: relative;
   width: 122px;
@@ -329,7 +422,7 @@ button {
   align-items: center;
   border: 1px solid #c8c8c8;
   background-color: #ffffff;
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 .list__util-btn-del .button,
@@ -381,6 +474,144 @@ button {
 
 .list__util-btn-del .button:active {
   border: 1px solid #ff6060;
+}
+
+/* 모바일용 사이드바 추가 버튼 */
+.mobile-sidebar .mobile-btn-regi .mobile-button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-sidebar .mobile-btn-regi .mobile-button .mobile-button__icon {
+  position: absolute;
+  transform: translateX(0);
+  height: 100%;
+  width: 20px;
+  background-color: #bfd60c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-sidebar .mobile-btn-regi .mobile-button .svg {
+  width: 20px;
+  stroke: #fff;
+}
+
+.mobile-sidebar .mobile-btn-regi .mobile-button:hover .mobile-button__icon {
+  width: 20px;
+  transform: translateX(0);
+}
+
+.mobile-sidebar .mobile-btn-regi .mobile-button:active .mobile-button__icon {
+  background-color: #89b806;
+}
+
+/* 모바일용 사이드바 수정 버튼 */
+.mobile-sidebar .mobile-btn-modi .mobile-button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-sidebar .mobile-btn-modi .mobile-button .mobile-button__icon {
+  position: absolute;
+  transform: translateX(0);
+  height: 100%;
+  width: 20px;
+  background-color: #edd77d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-sidebar .mobile-btn-modi .mobile-button:hover .mobile-button__icon {
+  width: 20px;
+  transform: translateX(0);
+}
+
+.mobile-sidebar .mobile-btn-modi .mobile-button:active .mobile-button__icon {
+  background-color: #fbcb0b;
+}
+
+/* 모바일용 사이드바 삭제 버튼 */
+.mobile-sidebar .mobile-btn-del .mobile-button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-sidebar .mobile-btn-del .mobile-button .mobile-button__icon {
+  position: absolute;
+  transform: translateX(0);
+  height: 100%;
+  width: 20px;
+  background-color: #ff8585;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-sidebar .mobile-btn-del .mobile-button .svg {
+  width: 20px;
+  stroke: #fff;
+}
+
+.mobile-sidebar .mobile-btn-del .mobile-button:hover .mobile-button__icon {
+  width: 20px;
+  transform: translateX(0);
+}
+
+.mobile-sidebar .mobile-btn-del .mobile-button:active .mobile-button__icon {
+  background-color: #ff6060;
+}
+
+/* 모바일용 사이드바 TOP 버튼 */
+.mobile-sidebar .mobile-btn-totop .mobile-button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-sidebar .mobile-btn-totop .mobile-button .mobile-button__icon {
+  position: absolute;
+  transform: translateX(0);
+  height: 100%;
+  width: 20px;
+  background-color: #bdbdbd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-sidebar .mobile-btn-totop .mobile-button:hover .mobile-button__icon {
+  width: 20px;
+  transform: translateX(0);
+}
+
+.mobile-sidebar .mobile-btn-totop .mobile-button:active .mobile-button__icon {
+  background-color: #6d6d6d;
 }
 
 .list__content {
