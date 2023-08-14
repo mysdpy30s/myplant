@@ -16,8 +16,11 @@ button {
 }
 
 @media screen and (max-width: 430px) {
-  body {
+  body,
+  input {
     overflow: hidden;
+    font-size: 13px;
+    margin: 0 auto;
   }
 
   .header {
@@ -26,54 +29,64 @@ button {
     position: relative;
     margin: 0 auto;
   }
-  .header__title-deco img {
-    width: 100%;
+  .header__title span {
+    white-space: nowrap;
   }
   .header__myinfo {
     position: absolute;
-    top: -6.5em;
-    right: -6em;
+    top: -7.5em;
+    right: -4em;
   }
   .header__myinfo span,
-  .header__myinfo a {
+  .header__myinfo a,
+  .header__myinfo-sub {
     width: 60%;
+    font-size: 0.9em;
   }
   .header__myinfo-deco img {
-    max-width: 80%;
+    max-width: 55vw;
     position: relative;
-    top: 7rem;
-    right: 4.5rem;
+    top: 6rem;
+    right: 6rem;
     z-index: -1;
   }
   .mobile-sidebar {
     display: block;
     position: fixed;
-    bottom: 40vh;
-    left: 21.5rem;
+    bottom: 13rem;
+    right: 7.5rem;
+    padding: 0.2em;
+    background-color: #fff;
     z-index: 999;
   }
-  .mobile-sidebar .mobile-button {
-    width: 100%;
-  }
-  .list__util-btn-regi {
-    display: none;
-  }
-  .list__util-btn-modi {
-    display: none;
-  }
+  .list__util-btn-regi,
+  .list__util-btn-modi,
   .list__util-btn-del {
     display: none;
   }
   .list__content {
     max-width: 100%;
   }
-  .list__actual table {
-    max-width: 100%;
-    height: auto;
+  .list__actual {
+    background-image: url("/assets/images/bg_bot.png");
+    background-repeat: no-repeat;
+    border: 1px dashed #c8c8c8;
+    border-radius: 20px;
+    width: 100%;
+    max-height: calc(100vh-200px);
+    position: relative;
     overflow-y: auto;
+    z-index: 0;
+  }
+  .list__actual table {
+    width: 800px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
   }
   .list__actual td {
-    font-size: 1em;
+    vertical-align: middle;
+    border-bottom: solid 1px #e2e2e2;
+    padding: 0.6em;
   }
 }
 
