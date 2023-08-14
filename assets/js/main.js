@@ -14,15 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 체크박스 클릭시 테이블 줄 색상 변경하기 //
-function chgBg(t) {
-  let td = t.parentNode;
+function chgBg(checkbox) {
+  let td = checkbox.parentNode;
   let tr = td.parentNode;
 
-  if (t.checked) {
+  if (checkbox.checked) {
     td.style.background = "linear-gradient(to right, #fff, #fff)";
     tr.style.background = "linear-gradient(to right, #fff, #fff2e3,  #E2EF9D)";
   } else {
-    td.style.background = "linear-gradient(to right, #fff, #fff)";
-    tr.style.background = "linear-gradient(to right, #fff, #fff)";
+    td.style.background = "";
+    tr.style.background = "";
   }
 }
