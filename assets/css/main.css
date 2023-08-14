@@ -21,7 +21,7 @@ button {
     height: auto;
   }
   .header__title span {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .header__title-deco {
     width: 80%;
@@ -40,12 +40,18 @@ button {
     display: block;
     position: fixed;
     bottom: 20px;
-    right: 5%;
+    left: 50%;
     width: 100%;
     z-index: 999;
   }
   .mobile-sidebar .mobile-button {
     width: 100%;
+  }
+  .list__actual table {
+    width: 100%;
+  }
+  .list__actual td {
+    font-size: 1em;
   }
 }
 
