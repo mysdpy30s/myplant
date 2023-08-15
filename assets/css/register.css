@@ -1,0 +1,173 @@
+@import url(/assets/css/reset.css);
+
+html,
+body {
+  font-family: "Gowun Batang", serif;
+  font-size: 15px;
+  background-color: #f7efd2;
+}
+
+.register__content {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+}
+
+.register__title span {
+  position: absolute;
+  left: 4.2em;
+  top: 1.1em;
+  font-size: 2em;
+  font-weight: 500;
+  background-color: rgba(255, 235, 180, 0.8);
+  font-style: italic;
+  writing-mode: vertical-lr;
+}
+
+.register__table {
+  position: absolute;
+  left: 13em;
+  top: 7em;
+}
+
+tr {
+  line-height: 1.5em;
+}
+
+td {
+  padding: 0.7em;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+table > tr:last-child {
+  vertical-align: middle;
+}
+
+/* 등록 버튼*/
+.register-btn .button {
+  position: relative;
+  width: 90px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #c8c8c8; /* b1c51c */
+  background-color: #fff; /* 89b806 */
+  margin-right: 5px;
+}
+
+.register-btn .button,
+.register-btn .button__icon,
+.register-btn .button__text {
+  transition: all 0.3s;
+}
+
+.register-btn .button .button__text {
+  transform: translateX(12px);
+  color: #7e7e7e;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.register-btn .button .button__icon {
+  position: absolute;
+  transform: translateX(52px);
+  height: 100%;
+  width: 30px;
+  background-color: #bfd60c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-btn .button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.register-btn .button:hover {
+  background: #89b806;
+}
+
+.register-btn .button:hover .button__text {
+  color: transparent;
+}
+
+.register-btn .button:hover .button__icon {
+  width: 83px;
+  transform: translateX(0);
+}
+
+.register-btn .button:active .button__icon {
+  background-color: #89b806;
+}
+
+.register-btn .button:active {
+  border: 1px solid #89b806;
+}
+
+/* 친구 삭제 버튼 */
+.cancel-btn .button {
+  position: relative;
+  width: 90px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #c8c8c8;
+  background-color: #ffffff;
+  margin-right: 5px;
+}
+
+.cancel-btn .button,
+.cancel-btn .button__icon,
+.cancel-btn .button__text {
+  transition: all 0.3s;
+}
+
+.cancel-btn .button .button__text {
+  transform: translateX(12px);
+  color: #7e7e7e;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.cancel-btn .button .button__icon {
+  position: absolute;
+  transform: translateX(52px);
+  height: 100%;
+  width: 30px;
+  background-color: #ff8585;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel-btn .button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.cancel-btn .button:hover {
+  background: #ff6060;
+}
+
+.cancel-btn .button:hover .button__text {
+  color: transparent;
+}
+
+.cancel-btn .button:hover .button__icon {
+  width: 83px;
+  transform: translateX(0);
+}
+
+.cancel-btn .button:active .button__icon {
+  background-color: #ff6060;
+}
+
+.cancel-btn .button:active {
+  border: 1px solid #ff6060;
+}
