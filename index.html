@@ -32,7 +32,7 @@
           <div class="header__myinfo-deco">
             <img src="/assets/images/infobg.png" alt="myinfo" />
           </div>
-          <span><a href="#">김미정</a> 님, 환영합니다.</span>
+          <span><a href="#">관리자</a> 님, 환영합니다.</span>
           <div class="header__myinfo-sub">
             <ul>
               <li>
@@ -174,158 +174,84 @@
                 </button>
               </div>
             </div>
-
-            <div class="list__util-btn-regi">
-              <button type="button" class="button">
-                <span class="button__text">추가하기</span>
-                <span class="button__icon"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                    stroke="currentColor"
-                    height="24"
-                    fill="none"
-                    class="svg"
-                  >
-                    <line y2="19" y1="5" x2="12" x1="12"></line>
-                    <line y2="12" y1="12" x2="19" x1="5"></line></svg
-                ></span>
-              </button>
-            </div>
-            <div class="list__util-btn-modi">
-              <button type="button" class="button">
-                <span class="button__text">수정하기</span>
-                <span class="button__icon"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    viewBox="0 0 24 24"
-                    height="24"
-                    fill="none"
-                    class="svg"
-                  >
-                    <image
-                      href="/assets/images/edit.png"
-                      width="24"
-                      height="24"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div class="list__util-btn-del">
-              <button type="button" class="button">
-                <span class="button__text">삭제하기</span>
-                <span class="button__icon"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                    stroke="currentColor"
-                    height="24"
-                    fill="none"
-                    class="svg"
-                  >
-                    <line x1="4" y1="12" x2="18" y2="12"></line></svg
-                ></span>
-              </button>
-            </div>
           </div>
+
+          <button class="btn-regi" type="button">
+            <span>+ 새 식물 추가</span>
+          </button>
         </div>
+
         <div class="list__content">
           <div class="list__actual">
             <table>
               <tr>
-                <td>
-                  <label class="container">
-                    <input type="checkbox" id="checkAll" />
-                    <div class="checkmark"></div
-                  ></label>
-                </td>
-                <td width="8%" id="item-photo">사진</td>
-                <td id="item-name">이름</td>
-                <td id="item-date">데려온 날짜</td>
-                <td id="item-water">물주기 간격</td>
-                <td id="item-nextwater">다음 물주기</td>
-                <td id="item-note">특이사항</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" onclick="chgBg(this)" />
-                </td>
-                <td id="item-photo">
-                  <img src="/assets/images/item1.jpg" alt="item 1" />
-                </td>
-                <td id="item-name">몬스테라</td>
-                <td id="item-date">2023.8.11</td>
-                <td id="item-water">겉흙이 마르면</td>
-                <td id="item-nextwater">직접 체크</td>
-                <td id="item-note">물 많이주면 안됨</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" onclick="chgBg(this)" />
-                </td>
-                <td id="item-photo">
-                  <img src="/assets/images/item2.jpeg" alt="item 2" />
-                </td>
-                <td id="item-name">녹보수</td>
-                <td id="item-date">2023.7.21</td>
-                <td id="item-water">겉흙이 마르면</td>
-                <td id="item-nextwater">직접 체크</td>
-                <td id="item-note">물 적당히!!</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" onclick="chgBg(this)" />
-                </td>
-                <td id="item-photo">
-                  <img src="/assets/images/item3.jpg" alt="item 3" />
-                </td>
-                <td id="item-name">오렌지자스민</td>
-                <td id="item-date">2023.6.22</td>
-                <td id="item-water">겉흙이 마르면</td>
-                <td id="item-nextwater">직접 체크</td>
-                <td id="item-note">하루 6시간 햇빛쐬기</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" onclick="chgBg(this)" />
-                </td>
-                <td id="item-photo">
-                  <img src="/assets/images/item3.jpg" alt="item 3" />
-                </td>
-                <td id="item-name">오렌지자스민11</td>
-                <td id="item-date">2023.6.22</td>
-                <td id="item-water">겉흙이 마르면</td>
-                <td id="item-nextwater">직접 체크</td>
-                <td id="item-note">하루 6시간 햇빛쐬기</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" onclick="chgBg(this)" />
-                </td>
-                <td id="item-photo">
-                  <img src="/assets/images/item3.jpg" alt="item 3" />
-                </td>
-                <td id="item-name">오렌지자스민11</td>
-                <td id="item-date">2023.6.22</td>
-                <td id="item-water">겉흙이 마르면</td>
-                <td id="item-nextwater">직접 체크</td>
-                <td id="item-note">하루 6시간 햇빛쐬기</td>
+                <th>사진</th>
+                <th>이름</th>
+                <th>데려온 날짜</th>
+                <th>물주기 간격</th>
+                <th>메모</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
               </tr>
             </table>
+            <div id="plants-data-container"></div>
           </div>
         </div>
+        <div class="modal" id="myModal">
+          <div class="modal-content">
+            <div class="modal-title"><span>우리집 식물 정보</span></div>
+            <br />
+            <div class="modal-form">
+              <form id="plants-form">
+                <label for="image">사진</label>
+                <input
+                  type="text"
+                  placeholder=""
+                  id="image-data"
+                  class="align-right"
+                /><br />
+
+                <label for="name">이름</label>
+                <input
+                  type="text"
+                  placeholder=""
+                  id="name-data"
+                  class="align-right"
+                /><br />
+
+                <label for="date">데려온 날짜</label>
+                <input
+                  type="text"
+                  placeholder=""
+                  id="date-data"
+                  class="align-right"
+                /><br />
+
+                <label for="water-time">물주기 간격</label>
+                <input
+                  type="text"
+                  placeholder=""
+                  id="water-time-data"
+                  class="align-right"
+                /><br />
+
+                <label for="note">메모</label>
+                <textarea
+                  id="note-data"
+                  rows="5"
+                  placeholder="체크할 점은 없나요? ex)그늘에 두기, 습도 유지하기"
+                  class="align-right"
+                ></textarea>
+                <div class="spacer"></div>
+
+                <button id="btn-data-save" class="save-button">추가</button>
+              </form>
+              <button id="closeModalBtn" class="closeModal">닫기</button>
+            </div>
+          </div>
+        </div>
+        <script defer src="/assets/js/index.js" type="module"></script>
       </div>
     </section>
-    <script defer src="/assets/js/main.js"></script>
   </body>
 </html>

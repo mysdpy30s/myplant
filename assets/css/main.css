@@ -6,9 +6,11 @@ html {
 
 body,
 input,
-button {
+button,
+textarea {
   font-family: "Gowun Batang", serif;
   font-size: 15px;
+  background-color: #fffcf3;
 }
 
 .mobile-sidebar {
@@ -16,24 +18,30 @@ button {
 }
 
 @media screen and (max-width: 430px) {
-  body,
-  input {
+  html,
+  body {
     overflow: hidden;
+    height: 100%;
     font-size: 13px;
-    margin: 0 auto;
+  }
+
+  input {
+    font-size: 0.9em;
   }
 
   .header {
     max-width: 100vw;
-    height: 50%;
     position: relative;
     margin: 0 auto;
   }
-  .header__title span {
-    white-space: nowrap;
+  .header__title-deco img {
+    width: 90vw;
   }
+  .header__title span {
+    font-size: 1.8rem !important;
+  }
+
   .header__myinfo {
-    position: absolute;
     top: -7.5em;
     right: -4em;
   }
@@ -43,50 +51,33 @@ button {
     width: 60%;
     font-size: 0.9em;
   }
+
   .header__myinfo-deco img {
-    max-width: 55vw;
-    position: relative;
-    top: 6rem;
-    right: 6rem;
+    position: absolute;
+    width: 60vw;
+    top: 9rem;
+    right: 9rem;
     z-index: -1;
   }
+
   .mobile-sidebar {
     display: block;
     position: fixed;
-    bottom: 13rem;
-    right: 7.5rem;
+    bottom: 1rem;
+    right: 0.5rem;
     padding: 0.2em;
     background-color: #fff;
     z-index: 999;
   }
-  .list__util-btn-regi,
-  .list__util-btn-modi,
-  .list__util-btn-del {
-    display: none;
-  }
-  .list__content {
-    max-width: 100%;
-  }
+
   .list__actual {
     background-image: url("/assets/images/bg_bot.png");
     background-repeat: no-repeat;
     border: 1px dashed #c8c8c8;
     border-radius: 20px;
-    width: 100%;
-    max-height: calc(100vh-200px);
-    position: relative;
-    overflow-y: auto;
+    max-width: 100vw;
+    height: 100vh;
     z-index: 0;
-  }
-  .list__actual table {
-    width: 800px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-  .list__actual td {
-    vertical-align: middle;
-    border-bottom: solid 1px #e2e2e2;
-    padding: 0.6em;
   }
 }
 
@@ -130,7 +121,6 @@ button {
   display: flex;
   flex-direction: column;
   padding: 1.2em;
-  background-color: #fff;
   margin-right: 5%;
   position: relative;
 }
@@ -139,7 +129,6 @@ button {
   text-decoration: underline;
   font-size: 1.3em;
   color: #000000;
-  z-index: 1;
 }
 
 .header__myinfo a:hover {
@@ -189,9 +178,9 @@ button {
 .header__myinfo-deco {
   position: absolute;
   float: right;
-  top: -2em;
-  right: -9em;
-  z-index: 0;
+  top: -2.3em;
+  right: -5em;
+  z-index: -1;
   opacity: 0.8;
 }
 
@@ -210,8 +199,7 @@ button {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
+  justify-content: center;
 }
 
 /* 검색창 스타일링 */
@@ -231,10 +219,10 @@ button {
   display: flex;
   gap: 0.5rem;
   border-bottom: 1px solid #c8c8c8;
+  margin-right: 2em;
   align-items: center;
   width: var(--width-of-input);
   position: relative;
-  isolation: isolate;
 }
 /* a fancy bg for showing background and border when focus. */
 .list__util-search .fancy-bg {
@@ -320,201 +308,50 @@ button {
   transition: 0.2s;
 }
 
-.list__util-btn {
-  display: flex;
-  flex-direction: row;
-}
-
-/* 친구 추가 버튼*/
-.list__util-btn-regi .button {
-  position: relative;
-  width: 122px;
-  height: 35px;
+/* 추가 버튼*/
+.btn-regi {
+  width: 7rem;
+  font-size: 1.2em;
+  padding: 0.3em;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  border: 1px solid #c8c8c8; /* b1c51c */
-  background-color: #fff; /* 89b806 */
-  margin-right: 5px;
-}
-
-.list__util-btn-regi .button,
-.list__util-btn-regi .button__icon,
-.list__util-btn-regi .button__text {
-  transition: all 0.3s;
-}
-
-.list__util-btn-regi .button .button__text {
-  transform: translateX(12px);
-  color: #7e7e7e;
-  font-size: 1em;
-  font-weight: 600;
-  letter-spacing: -1px;
-}
-
-.list__util-btn-regi .button .button__icon {
-  position: absolute;
-  transform: translateX(85px);
-  height: 100%;
-  width: 30px;
-  background-color: #bfd60c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.list__util-btn-regi .button .svg {
-  width: 30px;
-  stroke: #fff;
-}
-
-.list__util-btn-regi .button:hover {
-  background: #89b806;
-}
-
-.list__util-btn-regi .button:hover .button__text {
-  color: transparent;
-}
-
-.list__util-btn-regi .button:hover .button__icon {
-  width: 115px;
-  transform: translateX(0);
-}
-
-.list__util-btn-regi .button:active .button__icon {
-  background-color: #89b806;
-}
-
-.list__util-btn-regi .button:active {
-  border: 1px solid #89b806;
-}
-
-/* 친구 수정 버튼 */
-.list__util-btn-modi .button {
-  position: relative;
-  width: 122px;
-  height: 35px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+  background-color: #f2f2f2;
   border: 1px solid #c8c8c8;
-  background-color: #ffffff;
-  margin-right: 5px;
 }
 
-.list__util-btn-modi .button,
-.list__util-btn-modi .button__icon,
-.list__util-btn-modi .button__text {
-  transition: all 0.3s;
+.btn-regi:hover {
+  background-color: #c9e441;
+  border: 1px solid #c7d69e;
+  transition: 0.3s;
 }
 
-.list__util-btn-modi .button .button__text {
-  transform: translateX(12px);
-  color: #7e7e7e;
+/* 수정 버튼 */
+.btn-edit {
+  width: 2.3rem;
   font-size: 1em;
-  font-weight: 600;
-  letter-spacing: -1px;
+  padding: 0.2em;
+  cursor: pointer;
+  background-color: #ffe167;
+  border: 1px solid #edd77d;
 }
 
-.list__util-btn-modi .button .button__icon {
-  position: absolute;
-  transform: translateX(85px);
-  height: 100%;
-  width: 30px;
-  background-color: #edd77d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.list__util-btn-modi .button .svg {
-  width: 30px;
-  stroke: #fff;
-}
-
-.list__util-btn-modi .button:hover {
+.btn-edit:hover {
   background: #fbcb0b;
-}
-
-.list__util-btn-modi .button:hover .button__text {
-  color: transparent;
-}
-
-.list__util-btn-modi .button:hover .button__icon {
-  width: 115px;
-  transform: translateX(0);
-}
-
-.list__util-btn-modi .button:active .button__icon {
-  background-color: #fbcb0b;
-}
-
-.list__util-btn-modi .button:active {
   border: 1px solid #fbcb0b;
 }
 
-/* 친구 삭제 버튼 */
-.list__util-btn-del .button {
-  position: relative;
-  width: 122px;
-  height: 35px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  border: 1px solid #c8c8c8;
-  background-color: #ffffff;
-  margin-right: 5px;
-}
-
-.list__util-btn-del .button,
-.list__util-btn-del .button__icon,
-.list__util-btn-del .button__text {
-  transition: all 0.3s;
-}
-
-.list__util-btn-del .button .button__text {
-  transform: translateX(12px);
-  color: #7e7e7e;
+/* 삭제 버튼 */
+.btn-delete {
+  width: 2.3rem;
   font-size: 1em;
-  font-weight: 600;
-  letter-spacing: -1px;
+  padding: 0.2em;
+  cursor: pointer;
+  background-color: #ffa8a8;
+  border: 1px solid #ffa2a2;
 }
 
-.list__util-btn-del .button .button__icon {
-  position: absolute;
-  transform: translateX(85px);
-  height: 100%;
-  width: 30px;
-  background-color: #ff8585;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.list__util-btn-del .button .svg {
-  width: 30px;
-  stroke: #fff;
-}
-
-.list__util-btn-del .button:hover {
-  background: #ff6060;
-}
-
-.list__util-btn-del .button:hover .button__text {
-  color: transparent;
-}
-
-.list__util-btn-del .button:hover .button__icon {
-  width: 115px;
-  transform: translateX(0);
-}
-
-.list__util-btn-del .button:active .button__icon {
-  background-color: #ff6060;
-}
-
-.list__util-btn-del .button:active {
-  border: 1px solid #ff6060;
+.btn-delete:hover {
+  background-color: #ff8888;
+  border: 1px solid #ff8888;
 }
 
 /* 모바일용 사이드바 추가 버튼 */
@@ -664,123 +501,144 @@ button {
 .list__actual {
   background-image: url("/assets/images/bg_bot.png");
   background-repeat: no-repeat;
+  background-position: bottom;
   border: 1px dashed #c8c8c8;
   border-radius: 20px;
   margin-top: 2em;
-  width: 100%;
-  height: 450px;
+  width: 800px;
+  height: auto;
   position: relative;
   z-index: 0;
   overflow-y: auto;
 }
 
 .list__actual table {
-  width: 800px;
-  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
   background-color: rgba(255, 255, 255, 0.7);
+  table-layout: fixed;
+}
+
+.list__actual th {
+  font-size: 1.2em;
+  height: 2em;
+  font-weight: 700;
+  background-color: #fcffe8;
+}
+
+.list__actual th,
+.list__actual td {
+  padding: 0.5em;
+  border-bottom: solid 1px #e2e2e2;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .list__actual td {
-  vertical-align: middle;
-  border-bottom: solid 1px #e2e2e2;
-  padding: 0.6em;
+  height: 4em;
+  font-size: 1.1em;
 }
 
-#item-photo img {
-  max-width: 7em;
-  height: auto;
-  color: #fff2e3;
-  border-radius: 15px;
-  box-shadow: 3px 3px 3px #c8c8c8;
-}
-
-/* 체크박스(모두 선택) 속성 */
-/* Hide the default checkbox */
-.container {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  font-size: 1em;
-  user-select: none;
-}
-
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: relative;
-  height: 1.2em;
-  width: 1.2em;
-  background: #fff;
-  border: 1px solid #e2e2e2;
-  transition: all 0.5s;
-  --spread: 15px;
-  left: 0.3em;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background: #ffffff;
-  box-shadow: -5px -5px var(--spread) 0px #c4ff89,
-    0 -5px var(--spread) 0px #dfff4e, 5px -5px var(--spread) 0px #ff966a,
-    5px 0 var(--spread) 0px #bd72ff, 5px 5px var(--spread) 0px #f77737,
-    0 5px var(--spread) 0px #fcaf45, -5px 5px var(--spread) 0px #ffdc80;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 0.45em;
-  top: 0.25em;
-  width: 0.25em;
-  height: 0.5em;
-  border: solid #89b806;
-  border-width: 0 0.15em 0.15em 0;
-  transform: rotate(45deg);
-}
-
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: #fff;
-  border: solid 1px #e2e2e2;
-  cursor: pointer;
-  height: 1.2em;
-  width: 1.2em;
-}
-input[type="checkbox"]::after {
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  content: "";
-  display: none;
-  height: 50%;
-  left: 35%;
-  position: relative;
-  top: 15%;
-  transform: rotate(45deg);
+.list__actual th:nth-child(1),
+.list__actual td:nth-child(1) {
   width: 20%;
 }
-input[type="checkbox"]:checked {
-  background: #f9ca30;
+
+.list__actual th:nth-child(2),
+.list__actual td:nth-child(2) {
+  width: 8%;
 }
-input[type="checkbox"]:checked::after {
-  display: block;
+
+.list__actual th:nth-child(5),
+.list__actual td:nth-child(5) {
+  width: 20%;
+}
+
+.list__actual th:nth-last-child(2),
+.list__actual th:last-child,
+.list__actual td:nth-last-child(2),
+.list__actual td:last-child {
+  width: 6%;
+}
+
+/* Styles for modal container */
+.modal {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Styles for modal content */
+.modal-content {
+  background-color: #f7efd2;
+  background-image: url("/assets/images/register_bg.png");
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 6px 8px rgba(88, 88, 88, 0.14);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal-content span {
+  background-color: rgba(255, 229, 116, 0.8);
+  font-size: 2.1em;
+  font-weight: 500;
+  font-style: italic;
+  writing-mode: vertical-rl;
+  padding: 0.2em;
+}
+
+.modal-form {
+  text-align: right;
+  padding: 1em;
+}
+
+.modal-form label {
+  line-height: 2em;
+  margin-right: 1em;
+}
+
+.modal-form input,
+.modal-form textarea {
+  border: 1px solid #c8c8c8;
+}
+
+.align-right {
+  float: right;
+}
+
+.spacer {
+  height: 7em;
+}
+.save-button {
+  background-color: #fff;
+  border: 1px solid #fff;
+  font-size: 1.5em;
+  padding: 0.2em;
+  float: right;
+  cursor: pointer;
+}
+/* Styles for the button */
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
 }
