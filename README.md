@@ -5,7 +5,7 @@
 
 ## [배포 링크]
 
-https://
+https://phenomenal-biscotti-07c845.netlify.app
 <br>
 
 ## 기술 스택
@@ -42,12 +42,16 @@ https://
 
 ### 리스트 조회
 
-!사진
+![image](https://github.com/KDT1-FE/Y_FE_JAVASCRIPT_PICTURE/assets/137375435/d6ee50a1-119c-4842-b8e2-32bfdb655c1a)
+
 <br><br>
 
-### 식물 정보 추가 / 수정
+### 프로필 정보 보기
 
-!사진
+<img width="887" alt="image" src="https://github.com/KDT1-FE/Y_FE_JAVASCRIPT_PICTURE/assets/137375435/c957a7af-d91f-43b7-90c4-8a6e518cd0ca">
+
 <br><br>
 
 ## [유저플로우]
+
+<img width="718" alt="image" src="https://github.com/mysdpy30s/mysdpy30s/assets/137375435/505a4196-b7cc-416c-ac38-42726882ee59">
