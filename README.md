@@ -10,23 +10,18 @@ https://phenomenal-biscotti-07c845.netlify.app
 
 ## 기술 스택
 
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-<img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
 ## [필수 요구사항 - 구현 완료]
 
-✔️ Firebase 서비스를 이용하여 사진을 관리할 수 있는 페이지 구현
-✔️ 프로필 페이지 개발
-✔️ 스크롤이 가능한 형태의 리스팅 페이지 개발
-✔️ 전체 페이지 데스크탑-모바일 반응형 페이지를 개발
-✔️ 사진 등록, 수정, 삭제 기능 추가
-✔️ 유저 플로우를 제작하여 리드미에 추가
-✔️ CSS - 애니메이션 구현 & 상대수치 사용(rem, em)
-✔️ JavaScript - DOM event 조작
+✔️ Firebase 서비스를 이용하여 사진을 관리할 수 있는 페이지 구현<br>
+✔️ 프로필 페이지 개발<br>
+✔️ 스크롤이 가능한 형태의 리스팅 페이지 개발<br>
+✔️ 전체 페이지 데스크탑-모바일 반응형 페이지를 개발<br>
+✔️ 사진 등록, 수정, 삭제 기능 추가<br>
+✔️ 유저 플로우를 제작하여 리드미에 추가<br>
+✔️ CSS - 애니메이션 구현 & 상대수치 사용(rem, em)<br>
+✔️ JavaScript - DOM event 조작<br>
 <br>
 
 ## [선택 요구사항 중 구현한 기능]
